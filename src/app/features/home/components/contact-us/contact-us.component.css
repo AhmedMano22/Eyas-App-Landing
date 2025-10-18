@@ -1,0 +1,20 @@
+* {
+    font-family: Cairo !important;
+}
+
+.phone-prefix {
+    position: absolute;
+    top: 7px;
+    left: 18px !important;
+    right: unset !important;
+}
+
+.phone-number,
+.phone-prefix {
+    font: inherit !important;
+    direction: ltr !important;
+}
+
+.phone-number {
+    padding-left: 35px !important
+}

@@ -1,0 +1,79 @@
+<!-- Navbar STart -->
+<header id="topnav" class="defaultscroll sticky" (window:scroll)="windowScroll()">
+    <div class="container">
+        <!-- Logo container-->
+        <div>
+            <a class="logo" [ngxScrollTo]="'#home'">
+                <img src="assets/images/logo-dark.png" height="60" alt="">
+            </a>
+        </div>
+        <!-- End Logo container-->
+        <div class="menu-extras">
+            <div class="menu-item">
+                <!-- Mobile menu toggle-->
+                <a class="navbar-toggle" (click)="toggleMenu()" [ngClass]="{'open': isCondensed === true}">
+                    <div class="lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+                <!-- End mobile menu toggle-->
+            </div>
+        </div>
+
+        <div id="navigation">
+            <!-- Navigation Menu-->
+            <ul class="navigation-menu">
+                <li class="has-submenu" (click)="toggleMenu();currentSection='home'"
+                    [ngClass]="{'active':currentSection === 'home'}">
+                    <a routerLink='/' [ngxScrollTo]="'#home'">الرئيسية</a>
+                </li>
+                <!-- <li class="has-submenu" (click)="toggleMenu();currentSection='blog'" [ngClass]="{'active':currentSection === 'blog'}">
+                    <a routerLink='/blog' [ngxScrollTo]="'#blog'">المدونة</a>
+                </li> -->
+                <!-- <li class="has-submenu" (click)="toggleMenu();currentSection='law-dictionary'" [ngClass]="{'active':currentSection === 'law-dictionary'}">
+                    <a routerLink='/law-dictionary' [ngxScrollTo]="'#law-dictionary'">المعجم القانوني</a>
+                </li> -->
+                <li class="has-submenu" (click)="toggleMenu();currentSection='eyas-people'"
+                    [ngClass]="{'active':currentSection === 'eyas-people'}">
+                    <a routerLink='/' [ngxScrollTo]="'#eyas-people'">إياس أفراد</a>
+                </li>
+                <li class="has-submenu" (click)="toggleMenu();currentSection='eyas-business'"
+                    [ngClass]="{'active':currentSection === 'eyas-business'}">
+                    <a routerLink='/' [ngxScrollTo]="'#eyas-business'">إياس أعمال</a>
+                </li>
+
+                <li class="has-submenu" (click)="toggleMenu();currentSection='eyas-lawyer'"
+                    [ngClass]="{'active':currentSection === 'eyas-lawyer'}">
+                    <a routerLink='/' [ngxScrollTo]="'#eyas-lawyer'">محامي أو مستشار؟</a>
+                </li>
+
+                <!-- <li class="has-submenu" (click)="toggleMenu();currentSection='news-letter'"
+                    [ngClass]="{'active':currentSection === 'news-letter'}">
+                    <a routerLink='/' [ngxScrollTo]="'#news-letter'">سجل اهتمامك</a>
+                </li> -->
+
+                <li class="list-inline-item mb-0">
+                    <a href="https://wa.me/+966501100712" aria-controls="offcanvasRight" target="_blank" class="pt-3">
+                        <div class="btn btn-icon btn-pills">
+                            <i class="uil uil-whatsapp-icon d-block rounded h2 mb-0"></i>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <!--end navigation menu-->
+        </div>
+
+        <!--end navigation-->
+    </div>
+    <!--end container-->
+</header>
+<router-outlet></router-outlet>
+
+<footer>
+    <p class="text-center">جميع الحقوق محفوظة لمنصة إياس القانونية ©</p>
+    <!-- <p class="text-center">
+        <a routerLink='/privacy-policy'>سياسة الخصوصية</a>
+    </p> -->
+</footer>

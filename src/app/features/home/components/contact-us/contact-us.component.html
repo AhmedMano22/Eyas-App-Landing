@@ -1,0 +1,194 @@
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-color-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!--Shape End-->
+
+<!-- Start Contact -->
+<section class="section pb-0 mt-4 " data-aos="slide-left" data-aos="slide-left" data-aos-duration="2500"
+    data-aos-easing="ease" data-aos-once="false">
+    <div class="container d-flex justify-content-center">
+        <div class="row d-flex justify-content-center" style="direction: ltr;">
+            <div class="col-md-6 ">
+                <div class="card border-0 text-center features feature-primary feature-clean">
+                    <div class="icons text-center mx-auto">
+                        <i class="uil uil-whatsapp d-block rounded h3 mb-0"></i>
+                    </div>
+                    <div class="content mt-4">
+                        <h5 class="fw-bold">واتساب</h5>
+                        <p class="text-muted">يمكنك التواصل مع إياس عبر واتساب من خلال الرقم</p>
+                        <a href="https://wa.me/+966501100712" class="text-primary">+00966501100712</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6 pt-2 pt-sm-0 order-2 order-md-1">
+                <div class="card shadow rounded border-0">
+                    <div class="card-body py-5">
+                        <h4 class="card-title">شكوى أو استفسار؟</h4>
+                        <div class="custom-form mt-3">
+                            <form [formGroup]="form" (ngSubmit)="onSendMessage()">
+                                <p id="error-msg" class="mb-0"></p>
+                                <div id="simple-msg"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">الاسم
+                                                <span
+                                                    [ngClass]="form.get('fullname').invalid? 'text-danger' : 'text-success'">*</span>
+                                            </label>
+                                            <div class="form-icon position-relative">
+                                                <i-feather name="user" class="fea icon-sm icons"></i-feather>
+                                                <input max='25' formControlName="fullname" type="text"
+                                                    class="form-control ">
+                                                <p class="text-danger"
+                                                    *ngIf="form.get('fullname').invalid && (form.get('fullname').dirty || form.get('fullname').touched)">
+                                                    <ng-container *ngIf="form.get('fullname').hasError('required')">
+                                                        رجاءاً ادخال الاسم
+                                                    </ng-container>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">البريد الإلكتروني <span
+                                                    [ngClass]="form.get('email').invalid? 'text-danger' : 'text-success'">*</span>
+                                            </label>
+                                            <div class="form-icon position-relative">
+                                                <i-feather name="email" class="fea icon-sm icons"></i-feather>
+                                                <input formControlName="email" type="email" class="form-control ">
+                                                <p class="text-danger"
+                                                    *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)">
+                                                    <ng-container *ngIf="form.get('email').hasError('required')">
+                                                        رجاءاً ادخال البريد الإلكتروني
+                                                    </ng-container>
+                                                    <ng-container *ngIf="form.get('email').hasError('email')">
+                                                        البريد الإلكتروني غير صالح
+                                                    </ng-container>
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">الموضوع
+                                                <span
+                                                    [ngClass]="form.get('title').invalid? 'text-danger' : 'text-success'">*</span>
+                                            </label>
+                                            <div class="form-icon position-relative">
+                                                <i-feather name="book" class="fea icon-sm icons"></i-feather>
+                                                <input formControlName="title" class="form-control ">
+                                                <p class="text-danger"
+                                                    *ngIf="form.get('title').invalid && (form.get('title').dirty || form.get('title').touched)">
+                                                    <ng-container *ngIf="form.get('title').hasError('required')">
+                                                        رجاءاً ادخال موضوع الرسالة
+                                                    </ng-container>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">الموبايل
+                                                <span
+                                                    [ngClass]="form.get('phone').invalid? 'text-danger' : 'text-success'">*</span>
+                                            </label>
+                                            <div class="form-icon position-relative">
+                                                <i class="phone-prefix">05</i>
+                                                <input appNumbersOnly maxlength="8" minlength="8" formControlName="phone"
+                                                    class="form-control phone-number" style="text-align: unset !important;">
+                                                <p class="text-danger"
+                                                    *ngIf="form.get('phone').invalid && (form.get('phone').dirty || form.get('phone').touched)">
+                                                    <ng-container *ngIf="form.get('phone').hasError('required')">
+                                                        رجاءاً ادخال رقم الموبايل
+                                                    </ng-container>
+                                                    <ng-container *ngIf="form.get('phone').hasError('minLength')">
+                                                        رقم الموبايل غير صالح
+                                                    </ng-container>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--end col-->
+
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">الرسالة
+                                                <span
+                                                    [ngClass]="form.get('message').invalid? 'text-danger' : 'text-success'">*</span>
+                                            </label>
+                                            <div class="form-icon position-relative">
+                                                <i-feather name="message-circle"
+                                                    class="fea icon-sm icons clearfix"></i-feather>
+                                                <textarea formControlName="message" name="comments" id="comments"
+                                                    rows="4" class="form-control "></textarea>
+                                                <p class="text-danger"
+                                                    *ngIf="form.get('message').invalid && (form.get('message').dirty || form.get('message').touched)">
+                                                    <ng-container *ngIf="form.get('message').hasError('required')">
+                                                        رجاء ادخال محتوي الرسالة
+                                                    </ng-container>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <div class="d-grid">
+                                            <ngx-recaptcha2 #captchaElem
+                                                siteKey="6LfBeZAlAAAAAMr2Wdf_h9G2T0txY51hhPSFEY9D" [size]="size"
+                                                [hl]="lang" [theme]="theme" [type]="type" formControlName="recaptcha">
+                                            </ngx-recaptcha2>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-grid">
+                                            <button [disabled]="this.form.invalid" type="submit"
+                                                class="btn btn-primary">ارسال</button>
+                                        </div>
+                                    </div>
+                                    <!--end col-->
+                                </div>
+                                <!--end row-->
+                            </form>
+                        </div>
+                        <!--end custom-form-->
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+
+            <div class="col-lg-7 col-md-6 order-1 order-md-2">
+                <div class="card border-0">
+                    <div class="card-body p-0">
+                        <img src="assets/images/contact.svg" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+            <!--end col-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</section>
